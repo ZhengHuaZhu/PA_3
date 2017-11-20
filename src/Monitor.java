@@ -118,18 +118,13 @@ public class Monitor {
 
 	private synchronized void testTalk(int i) {
 		if (sts[i] != States.EATING && sts[i] == States.WANTS_TO_TALK) {
-			for (int j = i + 1; j < numOfPhils; j++) {
+			for (int j = 0; j < numOfPhils; j++) {
 				if (sts[j] == States.TALKING) {
 					someoneIsTalking = true;
 					break;
 				}
 			}
-			for (int j = i - 1; j >= 0; j--) {
-				if (sts[j] == States.TALKING) {
-					someoneIsTalking = true;
-					break;
-				}
-			}
+			
 			if (!someoneIsTalking) {
 				sts[i] = States.TALKING;
 				this.notifyAll();

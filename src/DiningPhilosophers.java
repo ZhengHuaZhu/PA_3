@@ -53,7 +53,7 @@ public class DiningPhilosophers {
 					// get the input as an int
 					num = Integer.parseInt(scanner.nextLine());
 					if (num < 2) {
-						System.out.println("The number must be greater than 1! ");
+						System.out.println("The number must be greater than 2! ");
 					} else {
 						invalidInput = false;
 						System.out.println(String.format("The number of philosophers is %d.", num));
@@ -75,14 +75,16 @@ public class DiningPhilosophers {
 
 			// Space for all the philosophers
 			Philosopher aoPhilosophers[] = new Philosopher[iPhilosophers];
-
+			
+			System.out.println(iPhilosophers + " philosopher(s) came in for a dinner.");
+			
 			// Let 'em sit down
 			for (int j = 0; j < iPhilosophers; j++) {
 				aoPhilosophers[j] = new Philosopher();
 				aoPhilosophers[j].start();
 			}
 
-			System.out.println(iPhilosophers + " philosopher(s) came in for a dinner.");
+//			System.out.println(iPhilosophers + " philosopher(s) came in for a dinner.");
 
 			// Main waits for all its children to die...
 			// I mean, philosophers to finish their dinner.
