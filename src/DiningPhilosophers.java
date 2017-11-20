@@ -38,7 +38,7 @@ public class DiningPhilosophers {
 		try {
 			/*
 			 * TASK 2: Should be able to set the number of philosophers from the
-			 * command line or the default if no arguments supplied.
+			 * command line or take the default number if no numbers are entered.
 			 */
 			// creates a scanner to read the command-line input
 			Scanner scanner = new Scanner(System.in);

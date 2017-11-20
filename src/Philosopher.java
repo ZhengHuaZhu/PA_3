@@ -1,3 +1,5 @@
+import java.util.Random;
+
 import common.BaseThread;
 
 /**
@@ -10,6 +12,8 @@ public class Philosopher extends BaseThread {
 	 * Max time an action can take (in milliseconds)
 	 */
 	public static final long TIME_TO_WASTE = 1000;
+
+	public static Random ran = new Random();
 
 	/**
 	 * The act of eating. - Print the fact that a given phil (their TID) has
@@ -79,13 +83,15 @@ public class Philosopher extends BaseThread {
 			 * TASK 1: A decision is made at random whether this particular
 			 * philosopher is about to say something terribly useful.
 			 */
-			if (true) // A random decision
+			if (ran.nextInt(50) % 2 == 0) // A random decision
 			{
 				// Some monitor ops down here...
+				// the phil wants to talk
+				DiningPhilosophers.soMonitor.requestTalk(getTID());
 				talk();
-				// ...
+				// the phil ends talking
+				DiningPhilosophers.soMonitor.endTalk(getTID());
 			}
-
 		}
 	} // run()
 

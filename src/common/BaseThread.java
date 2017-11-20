@@ -82,7 +82,7 @@ public class BaseThread extends Thread
 	}
 
 	/**
-	 * Sets internal TID and updates next TID on contruction time, so it's private.
+	 * Sets internal TID and updates next TID on construction time, so it's private.
 	 */
 	private final void setTID()
 	{
@@ -190,7 +190,7 @@ public class BaseThread extends Thread
 	}
 
 	/**
-	 * Calls yield() several (4-40, pseudorandomly) times.
+	 * Calls yield() several (5-40, pseudorandomly) times.
 	 * Next to useless, but helps to mix up the execution of phases.
 	 * Must NOT be atomic.
 	 */
