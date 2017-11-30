@@ -1,0 +1,117 @@
+Enter the number of philosophrs: 2
+The number of philosophers is 2.
+2 philosopher(s) came in for a dinner.
+Philosopher 1 starts eating.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 2 starts eating.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 2 ends thinking.
+Philosopher 2 starts talking.
+Philosopher 2 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher 2 ends talking.
+Philosopher 2 starts eating.
+Philosopher 1 ends thinking.
+Philosopher 1 starts talking.
+Philosopher 1 says: If thee cannot speak, thee must be silent
+Philosopher 1 ends talking.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 2 starts talking.
+Philosopher 2 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 2 ends talking.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 2 starts eating.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 ends thinking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 2 starts talking.
+Philosopher 2 says: My number is 2
+Philosopher 2 ends talking.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 2 starts eating.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 ends thinking.
+Philosopher 1 starts talking.
+Philosopher 1 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher 1 ends talking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 2 starts eating.
+Philosopher 1 ends thinking.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 2 starts eating.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 ends thinking.
+Philosopher 1 starts talking.
+Philosopher 1 says: If thee cannot speak, thee must be silent
+Philosopher 1 ends talking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 2 starts eating.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 ends thinking.
+Philosopher 1 starts talking.
+Philosopher 1 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher 1 ends talking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 1 ends eating.
+Philosopher 2 starts eating.
+Philosopher 1 starts thinking.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 2 ends thinking.
+Philosopher 2 starts talking.
+Philosopher 2 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 2 ends talking.
+Philosopher 2 starts eating.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 2 ends thinking.
+Philosopher 2 starts talking.
+Philosopher 2 says: 2 + 2 = 5 for extremely large values of 2...
+Philosopher 2 ends talking.
+Philosopher 2 starts eating.
+Philosopher 1 ends thinking.
+Philosopher 2 ends eating.
+Philosopher 2 starts thinking.
+Philosopher 1 starts eating.
+Philosopher 2 ends thinking.
+Philosopher 2 starts talking.
+Philosopher 2 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 2 ends talking.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 1 ends thinking.
+Philosopher 1 starts eating.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 1 ends thinking.
+Philosopher 1 starts talking.
+Philosopher 1 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 1 ends talking.
+Philosopher 1 starts eating.
+Philosopher 1 ends eating.
+Philosopher 1 starts thinking.
+Philosopher 1 ends thinking.
+All philosophers have left. System terminates normally.

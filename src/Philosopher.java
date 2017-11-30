@@ -15,6 +15,7 @@ public class Philosopher extends BaseThread {
 
 	public static Random ran = new Random();
 
+	// Task 1:
 	/**
 	 * The act of eating. - Print the fact that a given phil (their TID) has
 	 * started eating. - Then sleep() for a random interval. - The print that
@@ -24,7 +25,9 @@ public class Philosopher extends BaseThread {
 		try {
 			// tells which philosopher starts eating
 			System.out.println("Philosopher " + getTID() + " starts eating.");
+			
 			sleep((long) (Math.random() * TIME_TO_WASTE));
+			
 			// tells which philosopher ends eating
 			System.out.println("Philosopher " + getTID() + " ends eating.");
 		} catch (InterruptedException e) {
@@ -43,7 +46,9 @@ public class Philosopher extends BaseThread {
 		try {
 			// tells which philosopher starts thinking
 			System.out.println("Philosopher " + getTID() + " starts thinking.");
+			
 			sleep((long) (Math.random() * TIME_TO_WASTE));
+			
 			// tells which pholpsopher ends thinking
 			System.out.println("Philosopher " + getTID() + " ends thinking.");
 		} catch (InterruptedException e) {
@@ -61,7 +66,9 @@ public class Philosopher extends BaseThread {
 	public void talk() {
 		// tells which philosopher starts talking
 		System.out.println("Philosopher " + getTID() + " starts talking.");
+		
 		saySomething();
+		
 		// tells which philosopher ends talking
 		System.out.println("Philosopher " + getTID() + " ends talking.");
 	}
@@ -92,6 +99,7 @@ public class Philosopher extends BaseThread {
 				// the phil ends talking
 				DiningPhilosophers.soMonitor.endTalk(getTID());
 			}
+			
 		}
 	} // run()
 

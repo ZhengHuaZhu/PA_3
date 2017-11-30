@@ -37,7 +37,7 @@ public class DiningPhilosophers {
 	public static void main(String[] argv) {
 		try {
 			/*
-			 * TASK 2: Should be able to set the number of philosophers from the
+			 * TASK 3: Should be able to set the number of philosophers from the
 			 * command line or take the default number if no numbers are entered.
 			 */
 			// creates a scanner to read the command-line input
@@ -68,7 +68,7 @@ public class DiningPhilosophers {
 
 			int iPhilosophers = DEFAULT_NUMBER_OF_PHILOSOPHERS;
 
-			// Make the monitor aware of how many philosophers there are
+			// Make the monitor aware of the number of philosophers
 			if (num > 0)
 				iPhilosophers = num;
 			soMonitor = new Monitor(iPhilosophers);

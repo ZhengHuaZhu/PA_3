@@ -7,6 +7,7 @@ public class Monitor {
 	/*
 	 * ------------ Data members ------------
 	 */
+	// Task 2:
 	// any philosopher can have only 4 states
 	enum States {
 		THINKING, EATING, TALKING, HUNGRY, WANTS_TO_TALK
@@ -24,7 +25,7 @@ public class Monitor {
 	 * Constructor
 	 */
 	public Monitor(int piNumberOfPhilosophers) {
-		// the number of philosophers that have those states
+		// the number of philosophers who have those states
 		sts = new States[piNumberOfPhilosophers];
 		// initializes all philosophers with state of THINKING
 		for (int i = 0; i < piNumberOfPhilosophers; i++)
@@ -48,14 +49,16 @@ public class Monitor {
 		sts[piTID - 1] = States.HUNGRY;
 		// determines if the philosopher is allowed to eat
 		testEat(piTID - 1);
-		if (sts[piTID - 1] != States.EATING)
+
+		while (sts[piTID - 1] != States.EATING) {
 			try {
-				// the phil waits until neighbors finish eating
+				// the phil has to wait until neighbors finish eating
 				this.wait();
 			} catch (InterruptedException e) {
 				e.getMessage();
 				e.printStackTrace();
 			}
+		}
 	}
 
 	/**
@@ -63,11 +66,14 @@ public class Monitor {
 	 * and let others know they are available.
 	 */
 	public synchronized void putDown(final int piTID) {
-		// assumes that the philosophers who wants to put down chopsticks is to
+		// assumes that the philosopher who wants to put down chopsticks is to
 		// think again
 		sts[piTID - 1] = States.THINKING;
 
-		// prevents starvation from happening here
+		// Task 4: prevents starvation from happening we test the left and right
+		// neighbors of the phil who has just done eating: Set them to EATING
+		// once 2 chopsticks are available
+
 		// determines if the phil to the left is allowed to eat
 		testEat((piTID + numOfPhils - 2) % numOfPhils);
 		// determines if the phil to the right is allowed to eat
@@ -83,7 +89,8 @@ public class Monitor {
 		sts[piTID - 1] = States.WANTS_TO_TALK;
 		// tests if the philosopher is eating
 		testTalk(piTID - 1);
-		if (sts[piTID - 1] != States.TALKING)
+
+		while (sts[piTID - 1] != States.TALKING) {
 			try {
 				// waits until the phil who is talking to finish
 				this.wait();
@@ -91,6 +98,7 @@ public class Monitor {
 				e.getMessage();
 				e.printStackTrace();
 			}
+		}
 	}
 
 	/**
@@ -103,31 +111,52 @@ public class Monitor {
 		// reset the flag to default value
 		someoneIsTalking = false;
 		// notifies other phils that one of them may start to talk
-		this.notifyAll();
+		this.notify();
 	}
 
+	/**
+	 * Tests the states of the phils to the left and right of the philosopher
+	 * with position id i
+	 * 
+	 * @param i
+	 *            represents the position id of the passed in philosopher
+	 */
 	private synchronized void testEat(int i) {
 		int left, right;
+		// determines the phil to the left of the phil passed in with position
+		// id i
 		left = (i + numOfPhils - 1) % numOfPhils;
+		// determines the phil to the right of the phil passed in with position
+		// id i
 		right = (i + 1) % numOfPhils;
+
+		// a hungry phil is allowed to eat only if both neighbors are not eating
 		if ((sts[left] != States.EATING) && (sts[i] == States.HUNGRY) && (sts[right] != States.EATING)) {
 			sts[i] = States.EATING;
-			this.notifyAll();
+			this.notify();
 		}
 	}
 
+	/**
+	 * Tests if there is any phil is talking now
+	 * 
+	 * @param i
+	 *            represents the position id of the passed in philosopher
+	 */
 	private synchronized void testTalk(int i) {
+		// a phil who wants to talk cannot be eating
 		if (sts[i] != States.EATING && sts[i] == States.WANTS_TO_TALK) {
+			// loops thru to see if there already a philosopher is talking
 			for (int j = 0; j < numOfPhils; j++) {
 				if (sts[j] == States.TALKING) {
 					someoneIsTalking = true;
 					break;
 				}
 			}
-			
+			// the phil is allowed to talk since no one is talking now
 			if (!someoneIsTalking) {
 				sts[i] = States.TALKING;
-				this.notifyAll();
+				this.notify();
 			}
 		}
 	}
